@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
-import {Box, Container, createStyles, Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Typography} from "@material-ui/core";
+import {Box, Button, colors, Container, createStyles, Divider, Grid, List, ListItem, ListItemIcon, ListItemText, Typography} from "@material-ui/core";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
@@ -17,7 +17,6 @@ import {local as localEn} from "../assets/lang/en_us";
 import {LanguageProvider} from "../LanguageContext";
 import * as PropTypes from "prop-types";
 
-
 // va être utiliser pour mes routes 
 BoutonReservation.propTypes = {
     routes: PropTypes.array.isRequired,
@@ -31,21 +30,41 @@ const useStyles = makeStyles((theme) =>
 	({
 		Cadretitre:{
 			//display:'flex',
-			position:'absolue',
-			paddingLeft:'100px',
-			paddingTop:'100px',
+			position: 'relative',
+			left:'25%',
+			top:'20%',
 			backgroundColor: '#ff0000',
-			width: '400px',
-			height: '100px',
-
-  			
+			//% pour adapter à la taille de l'ecran
+			width: '50%',
+			height : '50%',			
+			color : '#FFFFFF',
+			fontWeight : 'bold',
+			fontSize : '20px',
+			//pour laisser l'espace entre le haut du cadre  et le texte
+			paddingTop : '4%',
+			 			
 		},
 
 		ImageReservation:{
 			backgroundImage: `url(${Image})`,//j'insère une image en bacground du rectangle
 			height: '200px',
 			margin: 'auto',
+			
 		}, 
+
+		CadreGrille: {
+			position: 'relative',
+			backgroundColor: '#ff0000',
+			height : '500px',
+
+		},
+
+		CadreFiltre: {
+			postion:'relative',
+			backgroundColor :'#0040ff',
+			height : '300px'
+
+		},
 
 		
 
@@ -114,11 +133,13 @@ function Resa(){
 
 			
 				<Container maxWidth ="lg" fixed >
-
+					<Container maxWidth ="lg" fixed >
 						<div className = {classes.ImageReservation} >
-							<div className = {classes.Cadretitre}>
+							<div className = {classes.Cadretitre}>PLATEFORME DE RESERVATION
 			       			</div>
 			       		</div>
+						
+
 						{/**<img src={Image} alt="Image" width="800" height="150"/>*/}{/* j'inserère image de reservation*/}
 						<Stepper/>
 
@@ -130,6 +151,73 @@ function Resa(){
 				                {generatedRoute}
 				        	</Switch>
 				        </BoutonReservation>
+					</Container>
+
+
+
+
+					<Container maxWidth ="lg" fixed>
+
+					<div className={classes.CadreFiltre}>
+						<input type= "search"></input>
+						<input type="checkbox"></input>
+						<label></label>
+					</div>
+						
+					</Container>
+
+
+
+
+
+					<Container maxWidth ="lg" fixed >
+						<div className = {classes.CadreGrille} >
+						<Grid countainer spacing ={4}>
+							<Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid>
+							<Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid><Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid><Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid><Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid>
+							<Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid>
+
+							<Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid>
+
+							<Grid item xs={7}> 
+								<Button color='#ffffff'>
+									Ballon de basket
+								</Button>
+							</Grid>
+
+						</Grid>
+						</div>
+						
+					</Container>
+
 
 			       	
 			       	
