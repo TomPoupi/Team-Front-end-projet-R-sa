@@ -27,7 +27,5 @@ export const local = {
     },
     View: {},
 
-    RouteResa: {
-        "/Reservation": "BontonReservation",
-    },
+
 };
